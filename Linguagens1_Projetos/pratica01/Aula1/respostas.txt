@@ -1,0 +1,23 @@
+1 - C:\Program Files\Java\jdk1.8.0_162
+2 - C:\Program Files\Java\jdk1.8.0_162\binC:\Program Files\Java\jdk1.8.0_162\bin
+3 - Use o comando:
+javac "nome do arquivo".java
+
+4 - Use o comando:
+java "nome do arquivo"   <https://www.guj.com.br/t/compilar-e-executar-uma-classe-java-pelo-prompt-do-windows/150852>
+
+5 - As variáveis de ambiente no geral são usadas como forma de configurar algum aplicativo de maneira mais simples. O Java busca essas informações no sistema operacional para 
+obter algum dado específico, como um arquivo executável.
+O Java pode usar as seguintes variáveis de ambiente: JAVA_HOME, CLASSPATH, Path, JDK_HOME e JRE_HOME, JAVA_TOOL_OPTIONS, JDK_JAVA_OPTIONS, _JAVA_OPTIONS e JAVA_OPTS.
+<https://pt.stackoverflow.com/questions/414451/para-que-serve-as-vari%C3%A1veis-do-sistema-operacional-relacionadas-ao-java>
+
+6 - Sim, mas apenas em seu próprio ambiente
+
+7 - <https://www.java.com/pt_BR/download/help/path.xml>
+
+8 - JAVA_HOME:
+
+Aponta para a pasta base do Java (mais precisamente a pasta do JDK caso você tenha instalado ele, algo parecido com isso: "C:\Program Files\Java\jdk12.0.5_24", se você 
+não mudou a pasta do Java de lugar na hora de instalar. O mesmo vale para o JRE).
+Esta variável é usada para mudar de forma flexível o valor das outras variáveis quando atualizarmos a versão do Java, basta mudar o valor desta variável. 
+Também pode ser usada por outros programas para localizar a pasta do Java
