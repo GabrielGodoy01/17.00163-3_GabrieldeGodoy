@@ -19,19 +19,25 @@ public class Main {
         System.out.println("Entre com sua senha: ");
         String senha1 = scanner.next();
 
-        System.out.println(usuario + senha + usuario1 +senha1);
 
-        if(usuario==usuario1){
+        if(usuario.equals(usuario1) && senha.equals(senha1)){
             System.out.println("Login realizado com sucesso!");
 
-            }/*else{while((usuario != usuario1) || (senha != senha1)){
-            System.out.println("Entre com seu usuário: ");
-            usuario1 = scanner.next();
-            System.out.println("Entre com sua senha: ");
-            senha1 = scanner.next();
+            }else{
+            if(!usuario.equals(usuario1) || !senha.equals(senha1)){
+                while(!usuario.equals(usuario1) || !senha.equals(senha1)) {
+                    System.out.println("Login ou senha incorretos. Tente novamente: ");
+                    System.out.println("Entre com seu usuário: ");
+                    usuario1 = scanner.next();
+                    System.out.println("Entre com sua senha: ");
+                    senha1 = scanner.next();
+                }
         }
+            if(usuario.equals(usuario1) && senha.equals(senha1)){
+                System.out.println("Login realizado com sucesso!");
+            }
 
-        }*/
+        }
 
 
 
