@@ -6,17 +6,21 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        int i, soma;
 
-        System.out.println("Digite o valor inicial: ");
-        int valorinic = s.nextInt();
-        System.out.println("Digite o valor final: ");
-        int valorfim = s.nextInt();
+        System.out.println("Informe o início do intevalo: ");
+        int ini = s.nextInt();
 
-        for(i = 1; i == valorfim; ++i){
-            i = valorinic + 1;
-            soma += i;
+        System.out.println("Informe o final do intervalo: ");
+        int fim = s.nextInt();
+
+        int i = ini;
+        int soma = ini;
+
+        while(i<fim){
+            i++;
+            soma+=i;
         }
+        System.out.println(soma);
     }
 
 }
