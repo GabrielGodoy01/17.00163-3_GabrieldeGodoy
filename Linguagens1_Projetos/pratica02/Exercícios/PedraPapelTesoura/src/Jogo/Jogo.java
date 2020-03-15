@@ -5,12 +5,36 @@ public class Jogo {
     public Jogadores jogadores;
 
 
-    void primeiro(String valor){
+    void x1(String valor){
         if(this.jogadores.ppt.equals(valor)){
-            System.out.println("certo");
+            System.out.println("Empate");
         }else{
-            System.out.println("erou");
+            if(this.jogadores.ppt.equals("pedra") && valor.equals("tesoura")){
+                System.out.println("Jogador 1 venceu");
+            }
+
+            if(this.jogadores.ppt.equals("tesoura") && valor.equals("pedra")){
+                System.out.println("Jogador 2 venceu");
+            }
+
+            if(this.jogadores.ppt.equals("pedra") && valor.equals("papel")){
+                System.out.println("Jogador 2 venceu");
+            }
+
+            if(this.jogadores.ppt.equals("papel") && valor.equals("pedra")){
+                System.out.println("Jogador 1 venceu");
+            }
+
+            if(this.jogadores.ppt.equals("papel") && valor.equals("tesoura")){
+                System.out.println("Jogador 2 venceu");
+            }
+
+            if(this.jogadores.ppt.equals("tesoura") && valor.equals("papel")){
+                System.out.println("Jogador 1 venceu");
+            }
         }
+
+
     }
 
 
