@@ -3,9 +3,10 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	    MinhaClasse m1 = new MinhaClasse();
-	    MinhaClasse m2 = new MinhaClasse();
-	    MinhaClasse m3 = new MinhaClasse();
-        System.out.println("Total objetos: " + m3.getContaObjetos());
+        Personagem p1 = new Personagem("allmight");
+        Personagem p2 = new Personagem("midoria");
+        System.out.println("URL P1 - " + p1.getUrl());
+        System.out.println("URL P2 - " + p2.getUrl());
+
     }
 }
