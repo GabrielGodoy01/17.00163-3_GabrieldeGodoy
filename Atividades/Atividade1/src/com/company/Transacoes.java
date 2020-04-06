@@ -12,10 +12,10 @@ public class Transacoes {
 
 
     public static double transferir(Contas conta, Contas conta2, double valor){
-        if(conta.getId() == conta2.getId() || conta.getSaldo() < valor )
+        if(conta.getId() == conta2.getId() || conta.getSaldo() < valor)
             System.out.println("Id's iguais ou saldo insuficiente, impossivel transferir!");
         else
-            return (conta.getSaldo() = conta.getSaldo() - valor);
+            return (conta.getSaldo() -= valor);
     }
 
 
