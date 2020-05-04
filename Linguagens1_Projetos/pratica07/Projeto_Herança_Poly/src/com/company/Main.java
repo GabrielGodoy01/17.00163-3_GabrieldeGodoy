@@ -24,10 +24,24 @@ public class Main {
 		System.out.println("Enhanced For (Foreach): ");
 		for(Animal animal : animals){
 			animal.comer();
+			if(animal instanceof Canino){
+				System.out.println("Canino");
+				comportamentoCanino((Canino) animal);
+			}
+			//cheira mal:
+			if(animal instanceof Locomover){
+				((Locomover) animal).comoMeLocomovo();
+			}
 		}
-
-		//cachorro.comer();
-	    //lobo.comer();
-	    //peixe.comer();
+		andaAe(cachorro);
+		andaAe(lobo);
+		andaAe(peixe);
     }
+    public static void comportamentoCanino(Canino canino){
+    	canino.cheirar();
+	}
+
+	public static void andaAe(Locomover locomover){
+    	locomover.comoMeLocomovo();
+	}
 }
