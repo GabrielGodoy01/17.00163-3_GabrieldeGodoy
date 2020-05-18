@@ -9,11 +9,21 @@ public class ArrayListVersion {
         ArrayList<Dog> dogs = new ArrayList<>();
         Dog dog = new Dog("d1", "Cachorro", 1);
         dogs.add(dog);
-        dogs.add(dog);
+        dogs.add(new Dog("D2", "Musica", 55));
+        dog = new Dog("d3","Dado", 4);
 
-        for (int i =0; i < dogs.size(); i++){
-            System.out.println((dogs.get(i)));
+        if(!dogs.contains(dog))
+            dogs.add(dog);
+
+        //Método clássico de Foreach
+        for (Dog dogNovo : dogs) {
+            System.out.println(dogNovo);
         }
+
+        //Foreach do JAVA 8!
+        dogs.forEach(cachorroDaLambda -> {
+            System.out.println(cachorroDaLambda);
+        });
 
     }
 }
