@@ -1,14 +1,29 @@
 package br.maua.game;
 
 import br.maua.models.PicturePokerCard;
-import br.maua.models.PicturePokerCardValues;
+
+import java.util.List;
 
 public class PicturePoker {
     public static void run(){
         System.out.println("Mario Poker!");
-        PicturePokerCard carta1 = new PicturePokerCard(PicturePokerCardValues.CLOUD);
-        PicturePokerCard carta2 = new PicturePokerCard(PicturePokerCardValues.FIRE_FLOWER);
+        PicturePokerDealer dealer = new PicturePokerDealer("Luigi");
+        System.out.println("Dealer da mesa: " + dealer.getName());
+        PicturePokerHand hand1= new PicturePokerHand(dealer.deal());
+        PicturePokerHand hand2 = new PicturePokerHand(dealer.deal());
+        System.out.println("\nMao Atual 1: ");
+        showPicturePokerList(hand1.getHand());
+        System.out.println("\nValor da mão 1: " + hand1.checkHand(hand1.getHand()));
+        System.out.println("\nMao Atual 2: ");
+        showPicturePokerList(hand2.getHand());
+        System.out.println("\nValor da mão 2: " + hand2.checkHand(hand2.getHand()));
 
+    }
 
+    private static void showPicturePokerList(List<PicturePokerCard> cardList) {
+        System.out.println("Size: " + cardList.size());
+        for (PicturePokerCard card : cardList) {
+            System.out.println(card);
+        }
     }
 }
