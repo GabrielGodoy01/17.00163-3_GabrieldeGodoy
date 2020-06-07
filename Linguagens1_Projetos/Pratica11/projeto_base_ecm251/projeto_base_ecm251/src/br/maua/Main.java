@@ -28,7 +28,7 @@ public class Main {
             howToWalk(animal, 100);
             howToEat(animal, 10);
         });
-        
+
     }
 
     public static void howToWalk(Walk walker, int distance){
