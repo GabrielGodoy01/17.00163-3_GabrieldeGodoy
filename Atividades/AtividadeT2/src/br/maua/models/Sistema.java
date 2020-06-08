@@ -2,11 +2,12 @@ package br.maua.models;
 
 import br.maua.enumeracoes.HorarioSistema;
 import br.maua.enumeracoes.TiposMembros;
+import br.maua.interfaces.PostarMensagem;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TesteDrive {
+public class Sistema{
     public static void run(){
 
         ArrayList<Funcionarios> funcionarios = new ArrayList<>();
@@ -84,4 +85,6 @@ public class TesteDrive {
 
             }
         }
+
     }
+
