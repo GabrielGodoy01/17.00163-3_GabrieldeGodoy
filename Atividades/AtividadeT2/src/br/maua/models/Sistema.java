@@ -9,6 +9,8 @@ import java.util.Scanner;
 
 /**
  * Classe responsável pelo sistema principal do programa.
+ *      Trabalha com um sistema de looping switch case no método run para intefaciar com o usuário até onde ele quiser.
+ * @author Gabriel de Godoy Braz e Matheus Vivas - 17.00163-3/17.04401-4
  */
 
 public class Sistema{

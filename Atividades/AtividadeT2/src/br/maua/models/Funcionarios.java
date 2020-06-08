@@ -6,12 +6,22 @@ import br.maua.interfaces.PostarMensagem;
 
 import java.util.ArrayList;
 
+/**
+ * Classe concreta para implementar um array de usuários do sistema que implementa PostarMensagem para os usuarios se comunicarem.
+ * @author Gabriel de Godoy Braz e Matheus Vivas - 17.00163-3/17.04401-4
+ */
+
 public class Funcionarios implements PostarMensagem{
     private String usuario;
     private String email;
     private TiposMembros tiposMembros;
     private HorarioSistema horarioSistema;
 
+    /**
+     * @param usuario Identificação do usuário.
+     * @param email Meio de contato com o usuário.
+     * @param tiposMembros Cargo dentro da empresa do usuário.
+     */
     public Funcionarios(String usuario, String email, TiposMembros tiposMembros) {
         this.usuario = usuario;
         this.email = email;
@@ -46,6 +56,9 @@ public class Funcionarios implements PostarMensagem{
                 "\nCargo: " + tiposMembros;
     }
 
+    /**
+     * @param funcionarios Override para o arraylist de funcionários
+     */
     @Override
     public void mensagem(ArrayList<Funcionarios> funcionarios) {
         for(int i = 0; i < funcionarios.size(); i++) {
