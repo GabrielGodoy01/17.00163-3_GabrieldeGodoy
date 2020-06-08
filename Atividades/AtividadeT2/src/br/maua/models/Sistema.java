@@ -15,18 +15,20 @@ public class Sistema{
     public static void run(){
 
         ArrayList<Funcionarios> funcionarios = new ArrayList<>();
-        
-        System.out.println("1 - CADASTRAR UM NOVO MEMBRO\n");
-        System.out.println("2 - APRESENTAÇÃO DOS MEMBROS CADASTRADOS\n");
-        System.out.println("3 - DEIXAR UM COLABORADOR IR\n");
-        System.out.println("4 - TROCAR A JORNADA DE TRABALHO\n");
-        System.out.println("5 - POSTAR MENSAGENS\n");
-        System.out.println("0 - SAIR DO SISTEMA\n");
 
-        Scanner scanner = new Scanner(System.in);
-        int principal = scanner.nextInt();
+        int principal = 1;
 
-        while(principal != 0){
+        do{
+            System.out.println("1 - CADASTRAR UM NOVO MEMBRO");
+            System.out.println("2 - APRESENTAÇÃO DOS MEMBROS CADASTRADOS");
+            System.out.println("3 - DEIXAR UM COLABORADOR IR");
+            System.out.println("4 - TROCAR A JORNADA DE TRABALHO");
+            System.out.println("5 - POSTAR MENSAGENS");
+            System.out.println("0 - SAIR DO SISTEMA");
+
+            Scanner scanner = new Scanner(System.in);
+            principal = scanner.nextInt();
+
             switch (principal) {
                 case 0:
                     break;
@@ -54,7 +56,9 @@ public class Sistema{
                     break;
                     
                 case 2:
-                    funcionarios.forEach(f -> System.out.println(funcionarios.toString()));
+                    for(int i = 0; i < funcionarios.size(); i++) {
+                        System.out.println(funcionarios.get(i).toString());
+                    }
                     break;
 
                 case 3:
@@ -81,14 +85,13 @@ public class Sistema{
                         System.out.println("A jornada esta setada em NORMAL");
                     }
                     break;
-                case 5:
 
+                case 5:
+                    int i = 0;
+                    funcionarios.get(i).mensagem(funcionarios);
                     break;
             }
-
-
-            }
-        }
-
+        } while(principal != 0);
     }
+}
 
