@@ -7,6 +7,10 @@ import br.maua.interfaces.PostarMensagem;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Classe responsável pelo sistema principal do programa.
+ */
+
 public class Sistema{
     public static void run(){
 

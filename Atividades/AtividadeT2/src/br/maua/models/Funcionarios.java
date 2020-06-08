@@ -6,9 +6,6 @@ import br.maua.interfaces.PostarMensagem;
 
 import java.util.ArrayList;
 
-/**
- *
- */
 public class Funcionarios implements PostarMensagem{
     private String usuario;
     private String email;
