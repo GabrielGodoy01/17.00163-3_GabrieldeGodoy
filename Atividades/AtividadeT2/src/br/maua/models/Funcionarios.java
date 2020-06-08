@@ -2,8 +2,11 @@ package br.maua.models;
 
 import br.maua.enumeracoes.HorarioSistema;
 import br.maua.enumeracoes.TiposMembros;
+import br.maua.interfaces.PostarMensagem;
 
-public class Funcionarios {
+import java.util.ArrayList;
+
+public class Funcionarios implements PostarMensagem {
     private String usuario;
     private String email;
     private TiposMembros tiposMembros;
@@ -34,5 +37,12 @@ public class Funcionarios {
 
     public HorarioSistema getHorarioSistema() {
         return horarioSistema;
+    }
+
+    @Override
+    public void mensagem(ArrayList<Funcionarios> funcionarios) {
+        funcionarios.forEach((funcionarios) -);
+            
+        }
     }
 }

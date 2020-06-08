@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface PicturePokerCheckHand {
     PicturePokerHandValues checkHand(List<PicturePokerCard> cardList);
-
 }
