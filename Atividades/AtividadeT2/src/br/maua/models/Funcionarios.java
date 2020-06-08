@@ -6,7 +6,7 @@ import br.maua.interfaces.PostarMensagem;
 
 import java.util.ArrayList;
 
-public class Funcionarios implements PostarMensagem {
+public class Funcionarios {
     private String usuario;
     private String email;
     private TiposMembros tiposMembros;
@@ -40,9 +40,11 @@ public class Funcionarios implements PostarMensagem {
     }
 
     @Override
-    public void mensagem(ArrayList<Funcionarios> funcionarios) {
-        funcionarios.forEach((funcionarios) -);
-            
-        }
+    public String toString() {
+        return "Funcionarios{" +
+                "usuario='" + usuario + '\'' +
+                ", email='" + email + '\'' +
+                ", tiposMembros=" + tiposMembros +
+                '}';
     }
 }

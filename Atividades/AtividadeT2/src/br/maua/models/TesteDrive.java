@@ -25,6 +25,7 @@ public class TesteDrive {
             switch (principal) {
                 case 0:
                     break;
+                    
                 case 1:
                     System.out.println("Nome: ");
                     String nome = scanner.next();
@@ -46,11 +47,24 @@ public class TesteDrive {
                         funcionarios.add(new Funcionarios(nome,email,TiposMembros.BIGBROTHERS));
                     }
                     break;
+                    
                 case 2:
-                    for (funcionarios:
-                         ) {
-                        
+                    funcionarios.forEach(f -> System.out.println(funcionarios.toString()));
+                    break;
+                    
+                case 3:
+                    for(int i = 0; i < funcionarios.size(); i++) {
+                        System.out.println(i + " - " + funcionarios.get(i).getUsuario());
                     }
+                    int remove = scanner.nextInt();
+                    funcionarios.remove(remove);
+
+                case 4:
+
+            }
+
+        }
+
             }
         }
     }
