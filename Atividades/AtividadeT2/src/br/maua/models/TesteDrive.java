@@ -51,21 +51,37 @@ public class TesteDrive {
                 case 2:
                     funcionarios.forEach(f -> System.out.println(funcionarios.toString()));
                     break;
-                    
+
                 case 3:
                     for(int i = 0; i < funcionarios.size(); i++) {
                         System.out.println(i + " - " + funcionarios.get(i).getUsuario());
                     }
                     int remove = scanner.nextInt();
                     funcionarios.remove(remove);
+                    break;
 
                 case 4:
+                    System.out.println("0 - Horário Normal");
+                    System.out.println("1 - Horário EXTRA");
+                    int alterar = scanner.nextInt();
+                    if(alterar == 0) {
+                        for(int i = 0; i < funcionarios.size(); i++) {
+                            funcionarios.get(i).setHorarioSistema(HorarioSistema.NORMAL);
+                        }
+                        System.out.println("A jornada esta setada em NORMAL");
+                    }else if(alterar == 1) {
+                        for(int i = 0; i < funcionarios.size(); i++) {
+                            funcionarios.get(i).setHorarioSistema(HorarioSistema.EXTRA);
+                        }
+                        System.out.println("A jornada esta setada em NORMAL");
+                    }
+                    break;
+                case 5:
 
+                    break;
             }
 
-        }
 
             }
         }
     }
-}

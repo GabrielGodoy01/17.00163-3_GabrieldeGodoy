@@ -6,7 +6,7 @@ import br.maua.interfaces.PostarMensagem;
 
 import java.util.ArrayList;
 
-public class Funcionarios {
+public class Funcionarios implements PostarMensagem{
     private String usuario;
     private String email;
     private TiposMembros tiposMembros;
@@ -42,9 +42,34 @@ public class Funcionarios {
     @Override
     public String toString() {
         return "Funcionarios{" +
-                "usuario='" + usuario + '\'' +
-                ", email='" + email + '\'' +
-                ", tiposMembros=" + tiposMembros +
+                "Nome de Usuario = '" + usuario + '\'' +
+                ", E-mail = '" + email + '\'' +
+                ", Cargo = " + tiposMembros +
                 '}';
+    }
+
+    @Override
+    public void mensagem(ArrayList<Funcionarios> funcionarios) {
+        for(int i = 0; i < funcionarios.size(); i++) {
+            TiposMembros tiposMembros = funcionarios.get(i).getTiposMembros();
+            //Por favor não nos julgue pelos feitos a seguir:
+            if(tiposMembros == TiposMembros.MOBILEMEMBERS && horarioSistema == HorarioSistema.NORMAL){
+                System.out.println(funcionarios.get(i).getUsuario() + " -  HAPPY CODING!");
+            }else if(tiposMembros == TiposMembros.MOBILEMEMBERS && horarioSistema == HorarioSistema.EXTRA){
+                System.out.println(funcionarios.get(i).getUsuario() + " -  Happy_C0d1ng. Maskers");
+            }else if(tiposMembros == TiposMembros.HEAVYLIFTERS && horarioSistema == HorarioSistema.NORMAL){
+                System.out.println(funcionarios.get(i).getUsuario() + " -  Podem contar conosco!");
+            }else if(tiposMembros == TiposMembros.HEAVYLIFTERS && horarioSistema == HorarioSistema.EXTRA){
+                System.out.println(funcionarios.get(i).getUsuario() + " -  N00b_qu3_n_Se_r3pita.bat");
+            }else if(tiposMembros == TiposMembros.SCRIPTGUYS && horarioSistema == HorarioSistema.NORMAL){
+                System.out.println(funcionarios.get(i).getUsuario() + " -  Prazer em ajudar novos amigos de código!");
+            }else if(tiposMembros == TiposMembros.SCRIPTGUYS && horarioSistema == HorarioSistema.EXTRA){
+                System.out.println(funcionarios.get(i).getUsuario() + " -  QU3Ro_S3us_r3curs0s.py");
+            }else if(tiposMembros == TiposMembros.BIGBROTHERS && horarioSistema == HorarioSistema.NORMAL){
+                System.out.println(funcionarios.get(i).getUsuario() + " -  Sempre ajudando as pessoas membros ou não S2!");
+            }else if(tiposMembros == TiposMembros.BIGBROTHERS && horarioSistema == HorarioSistema.EXTRA){
+                System.out.println(funcionarios.get(i).getUsuario() + " -  ...");
+            }
+        }
     }
 }
