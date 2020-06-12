@@ -20,11 +20,42 @@ public class Pedidos {
         this.estado = Estado.REALIZADO;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public FormaPagamento getFormaPagamento() {
+        return formaPagamento;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
     private String geradorId() {
         Random random = new Random();
         String idGerado = "";
         for (int i=0; i < 3; i++)
             idGerado += random.nextInt(10);
         return idGerado;
+    }
+
+    @Override
+    public String toString() {
+        return "Pedidos{" +
+                "id='" + id + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", valor=" + valor +
+                ", formaPagamento=" + formaPagamento +
+                ", estado=" + estado +
+                '}';
     }
 }
