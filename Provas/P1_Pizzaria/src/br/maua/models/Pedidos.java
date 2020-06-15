@@ -54,8 +54,7 @@ public class Pedidos {
 
     @Override
     public String toString() {
-        return  "ID: " + id + '\'' +
-                "Descrição: '" + descricao + '\'' +
+        return "Descrição: " + descricao + '\'' +
                 "Valor: " + valor + '\'' +
                 "Forma de Pagamento: " + formaPagamento + '\''+
                 "Estado: " + estado + "\n";

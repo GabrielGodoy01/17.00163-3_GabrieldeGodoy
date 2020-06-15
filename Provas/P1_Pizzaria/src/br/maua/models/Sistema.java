@@ -54,14 +54,15 @@ public class Sistema {
 
                 case 2:
                     for(int i = 0; i < pedidos.size(); i++){
-                        System.out.println(pedidos.get(i).getId() + " - " + pedidos.get(i).toString());
+                        System.out.println("ID: " + pedidos.get(i).getId() + " - " + pedidos.get(i).toString());
                     }
                     break;
+
                 case 3:
                     System.out.println("Escolha qual pedido quer alterar: ");
 
                     for(int i = 0; i < pedidos.size(); i++){
-                        System.out.println(pedidos.get(i).getId() + " - " + pedidos.get(i).toString());
+                        System.out.println("ID: " + pedidos.get(i).getId() + " - " + pedidos.get(i).toString());
                     }
 
                     String escolha = scanner.next();
