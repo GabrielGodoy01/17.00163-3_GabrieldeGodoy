@@ -1,6 +1,10 @@
 package br.maua.models;
 
-public class Usuario {
+import br.maua.interfaces.ChecarUsuario;
+
+import java.util.Scanner;
+
+public class Usuario implements ChecarUsuario {
     private String nome;
     private String email;
     private String senha;
@@ -15,4 +19,13 @@ public class Usuario {
         return senha;
     }
 
+    @Override
+    public boolean checkUser(Usuario usuario) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite a senha do usuário: ");
+        String senha = scanner.next();
+        if(senha.equals(usuario.getSenha()))
+            return true;
+        return false;
+    }
 }
