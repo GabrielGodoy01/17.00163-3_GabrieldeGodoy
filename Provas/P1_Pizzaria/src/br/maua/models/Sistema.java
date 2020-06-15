@@ -2,8 +2,6 @@ package br.maua.models;
 
 import br.maua.enums.Estado;
 import br.maua.enums.FormaPagamento;
-import br.maua.interfaces.ChecarPedidos;
-import br.maua.interfaces.ChecarUsuario;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -16,8 +14,6 @@ public class Sistema {
         ArrayList<Pedidos> pedidos = new ArrayList<>();
 
 
-
-        usuario.checkUser()
 
         int interacao = 1;
 
@@ -65,14 +61,18 @@ public class Sistema {
                     break;
 
                 case 2:
-
+                    for(Pedidos item : pedidos){
+                        System.out.println(item.toString());
+                    }
                     break;
 
                 case 3:
                     if(usuario.checkUser()) {
                         System.out.println("Escolha qual pedido quer alterar: ");
 
-                        ((ChecarPedidos) pedidos).checarPedidos(pedidos);
+                        for(Pedidos item : pedidos){
+                            System.out.println(item.toString());
+                        }
 
                         String escolha = scanner.next();
 
