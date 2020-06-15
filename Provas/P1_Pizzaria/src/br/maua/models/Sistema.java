@@ -74,6 +74,7 @@ public class Sistema {
                             System.out.println("1 - Saiu para entrega");
                             System.out.println("2 - Entregue");
                             System.out.println("3 - Devolvido");
+                            System.out.println("0 - Sair");
 
                             int novoEstado = scanner.nextInt();
 
@@ -83,9 +84,10 @@ public class Sistema {
                                 pedidos.get(i).setEstado(Estado.SAIU_PARA_ENTREGA);
                             }else if (novoEstado == 2){
                                 pedidos.get(i).setEstado(Estado.ENTREGUE);
-                            }else {
+                            }else if (novoEstado == 3) {
                                 pedidos.get(i).setEstado(Estado.DEVOLVIDO);
-                            }
+                            }else
+                                break;
                         }else{
                             System.out.println("ID inválido");
                         }
@@ -96,5 +98,7 @@ public class Sistema {
             }
         }while(interacao != 0);
     }
+
+
 }
 
