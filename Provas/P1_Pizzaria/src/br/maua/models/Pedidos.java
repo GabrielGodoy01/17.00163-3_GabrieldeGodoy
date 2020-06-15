@@ -54,12 +54,10 @@ public class Pedidos {
 
     @Override
     public String toString() {
-        return "Pedidos{" +
-                "id='" + id + '\'' +
-                ", descricao='" + descricao + '\'' +
-                ", valor=" + valor +
-                ", formaPagamento=" + formaPagamento +
-                ", estado=" + estado +
-                '}';
+        return  "ID: " + id + '\'' +
+                "Descrição: '" + descricao + '\'' +
+                "Valor: " + valor + '\'' +
+                "Forma de Pagamento: " + formaPagamento + '\''+
+                "Estado: " + estado + "\n";
     }
 }
