@@ -61,18 +61,14 @@ public class Sistema {
                     break;
 
                 case 2:
-                    for(Pedidos item : pedidos){
-                        System.out.println(item.toString());
-                    }
+                    checarPedidos(pedidos);
                     break;
 
                 case 3:
                     if(usuario.checkUser()) {
                         System.out.println("Escolha qual pedido quer alterar: ");
 
-                        for(Pedidos item : pedidos){
-                            System.out.println(item.toString());
-                        }
+                        checarPedidos(pedidos);
 
                         String escolha = scanner.next();
 
@@ -103,6 +99,12 @@ public class Sistema {
                     break;
             }
         }while(interacao != 0);
+    }
+
+    private static void checarPedidos(ArrayList<Pedidos> pedidos) {
+        for (Pedidos item : pedidos) {
+            System.out.println(item.toString());
+        }
     }
 
 }
