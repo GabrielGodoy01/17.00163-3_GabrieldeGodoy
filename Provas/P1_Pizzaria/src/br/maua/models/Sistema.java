@@ -33,7 +33,7 @@ public class Sistema {
                 case 0:
                     break;
                 case 1:
-                    if(checarUsuario.checkUser(usuario) == true) {
+                    if(checarUsuario.checkUser(usuario)) {
                         System.out.println("Descrição da venda: ");
                         String descricao = scanner.next();
                         System.out.println("Valor da venda: ");
@@ -68,7 +68,7 @@ public class Sistema {
                     break;
 
                 case 3:
-                    if(checarUsuario.checkUser(usuario) == true) {
+                    if(checarUsuario.checkUser(usuario)) {
                         System.out.println("Escolha qual pedido quer alterar: ");
 
                         for (int i = 0; i < pedidos.size(); i++) {
