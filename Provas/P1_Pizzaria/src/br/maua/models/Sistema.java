@@ -96,10 +96,8 @@ public class Sistema {
                                 } else if (novoEstado == 3) {
                                     pedidos.get(i).setEstado(Estado.DEVOLVIDO);
                                 }
-                            } else {
-                                System.out.println("ID inválido");
-                            }
-
+                            } else
+                                System.out.println("ID inválido.");
                         }
                     } else
                         System.out.println("Senha incorreta.");
