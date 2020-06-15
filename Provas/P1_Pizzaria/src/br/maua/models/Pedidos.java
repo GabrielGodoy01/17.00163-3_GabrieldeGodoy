@@ -40,6 +40,10 @@ public class Pedidos {
         return estado;
     }
 
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
     private String geradorId() {
         Random random = new Random();
         String idGerado = "";
