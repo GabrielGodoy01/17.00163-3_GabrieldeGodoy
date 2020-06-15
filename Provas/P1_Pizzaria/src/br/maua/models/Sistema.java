@@ -2,12 +2,15 @@ package br.maua.models;
 
 import br.maua.enums.Estado;
 import br.maua.enums.FormaPagamento;
+import br.maua.interfaces.ChecarUsuario;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Sistema {
+public class Sistema implements ChecarUsuario {
     public static void run() {
+
+        Usuario usuario = new Usuario("unico", "unico@ratoqueri.com");
 
         ArrayList<Pedidos> pedidos = new ArrayList<>();
 
@@ -28,6 +31,7 @@ public class Sistema {
                 case 0:
                     break;
                 case 1:
+                    
                     System.out.println("Descrição da venda: ");
                     String descricao =scanner.next();
                     System.out.println("Valor da venda: ");
@@ -100,5 +104,14 @@ public class Sistema {
     }
 
 
+    @Override
+    public boolean checkUser(Usuario usuario) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite a senha do usuário: ");
+        String senha = scanner.next();
+        if(senha == usuario.getSenha())
+            return true;
+        return false;
+    }
 }
 
