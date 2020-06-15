@@ -20,11 +20,11 @@ public class Usuario implements ChecarUsuario {
     }
 
     @Override
-    public boolean checkUser(Usuario usuario) {
+    public boolean checkUser() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Digite a senha do usuário: ");
         String senha = scanner.next();
-        if(senha.equals(usuario.getSenha()))
+        if(senha.equals(this.getSenha()))
             return true;
         return false;
     }
