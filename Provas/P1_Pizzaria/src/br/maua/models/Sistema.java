@@ -5,7 +5,7 @@ import br.maua.enums.FormaPagamento;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class PizzariaTesteDrive {
+public class Sistema {
     public static void run() {
 
         ArrayList<Pedidos> pedidos = new ArrayList<>();
