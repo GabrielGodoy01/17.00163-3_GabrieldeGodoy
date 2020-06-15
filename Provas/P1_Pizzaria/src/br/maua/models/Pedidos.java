@@ -54,7 +54,8 @@ public class Pedidos {
 
     @Override
     public String toString() {
-        return "Descrição: " + getDescricao() + "  -  " +
+        return "ID: " + getId() + "  -  " +
+                "Descrição: " + getDescricao() + "  -  " +
                 "Valor: " + getValor() + "  -  " +
                 "Forma de Pagamento: " + getFormaPagamento() + "  -  "+
                 "Estado: " + getEstado() + "\n";

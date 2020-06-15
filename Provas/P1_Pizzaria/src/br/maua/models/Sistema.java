@@ -62,8 +62,9 @@ public class Sistema {
                     break;
 
                 case 2:
+                    verificarPedidos(pedidos);
                     for(int i = 0; i < pedidos.size(); i++){
-                        System.out.println("ID: " + pedidos.get(i).getId() + " - " + pedidos.get(i).toString());
+                        System.out.println(pedidos.get(i).toString());
                     }
                     break;
 
@@ -72,7 +73,7 @@ public class Sistema {
                         System.out.println("Escolha qual pedido quer alterar: ");
 
                         for (int i = 0; i < pedidos.size(); i++) {
-                            System.out.println("ID: " + pedidos.get(i).getId() + " - " + pedidos.get(i).toString());
+                            System.out.println(pedidos.get(i).toString());
                         }
 
                         String escolha = scanner.next();
@@ -104,6 +105,12 @@ public class Sistema {
                     break;
             }
         }while(interacao != 0);
+    }
+
+    private static void verificarPedidos(Pedidos pedidos) {
+        for ( int elementos : pedidos) {
+            System.out.println(pedidos.toString());
+        }
     }
 }
 
