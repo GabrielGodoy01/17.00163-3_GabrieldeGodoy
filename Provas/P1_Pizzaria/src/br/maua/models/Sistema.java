@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Sistema {
     public static void run() {
 
-        Usuario usuario = new Usuario("unico", "unico@ratoqueri.com");
+        Usuario usuario = new Usuario("Ratata TheGreatest", "ratatamelhorpokemon@ratoqueri.com.br");
 
         ArrayList<Pedidos> pedidos = new ArrayList<>();
 
@@ -106,6 +106,5 @@ public class Sistema {
             System.out.println(item.toString());
         }
     }
-
 }
 
