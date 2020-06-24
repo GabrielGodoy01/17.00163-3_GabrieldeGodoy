@@ -6,6 +6,14 @@ import br.maua.enums.FormaPagamento;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Classe do Sistema principal da aplicação.
+ *      Tem por objetivo manter a interface rodando até onde o usuário desejar, gera, verfica e altera os pedidos da pizzaria
+ *      com segurança de senha para quem tentar gerar ou alterar os pedidos.
+ * @author Gabriel de Godoy Braz - 17.00163-3 - gabriel.godoybz@hotmail.com
+ * @since 18/06/2020
+ * @version 1.0
+ */
 public class Sistema {
     public static void run() {
 
@@ -102,6 +110,9 @@ public class Sistema {
         }while(interacao != 0);
     }
 
+    /**
+     * @param pedidos Define qual lista de pedidos deve ser utilizada para verificação dos pedidos.
+     */
     private static void checarPedidos(ArrayList<Pedidos> pedidos) {
         for (Pedidos item : pedidos) {
             System.out.println(item.toString());
