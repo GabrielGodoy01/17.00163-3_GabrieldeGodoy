@@ -75,7 +75,7 @@ public class Sistema {
 
                 case 3:
                     if(usuario.checkUser()) {
-                        System.out.println("Escolha qual pedido quer alterar: ");
+                        System.out.println("Escolha qual pedido quer alterar (ID): ");
 
                         checarPedidos(pedidos);
 
