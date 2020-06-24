@@ -27,6 +27,7 @@ public class Sistema {
 
             Scanner scanner = new Scanner(System.in);
             interacao = scanner.nextInt();
+            Scanner scanner1 = new Scanner(System.in);
 
             switch(interacao){
                 case 0:
@@ -34,7 +35,7 @@ public class Sistema {
                 case 1:
                     if(usuario.checkUser()) {
                         System.out.println("Descrição da venda: ");
-                        String descricao = scanner.next();
+                        String descricao = scanner1.nextLine();
                         System.out.println("Valor da venda: ");
                         Double valor = scanner.nextDouble();
                         System.out.println("Forma de Pagamento: ");
