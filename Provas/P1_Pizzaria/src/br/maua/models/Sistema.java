@@ -111,7 +111,7 @@ public class Sistema {
     }
 
     /**
-     * @param pedidos Define qual lista de pedidos deve ser utilizada para verificação dos pedidos.
+     * @param pedidos Define qual ArrayList de pedidos deve ser utilizada para verificação dos pedidos.
      */
     private static void checarPedidos(ArrayList<Pedidos> pedidos) {
         for (Pedidos item : pedidos) {
