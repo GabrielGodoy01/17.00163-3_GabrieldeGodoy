@@ -1,4 +1,4 @@
-package br.maua.model;
+package br.maua.projeto.model;
 
 import br.maua.Enumeracoes.Status;
 
@@ -11,6 +11,18 @@ public class Jogo {
         this.plataforma = plataforma;
         this.nome = nome;
         this.status = Status.NAO_INICIADO;
+    }
+
+    public String getPlataforma() {
+        return this.plataforma;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public String getStatus() {
+        return ""+status;
     }
 
     @Override
@@ -29,4 +41,6 @@ public class Jogo {
     public void setStatusJogando(){
         this.status = Status.JOGANDO;
     }
+
+
 }
