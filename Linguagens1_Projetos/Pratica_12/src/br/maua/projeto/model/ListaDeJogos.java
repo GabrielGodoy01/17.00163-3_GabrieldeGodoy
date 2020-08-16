@@ -22,4 +22,8 @@ public class ListaDeJogos {
                 "minhaListaDeJogoa=" + minhaListaDeJogos +
                 '}';
     }
+
+    public final List<Jogo> getJogos() {
+        return this.minhaListaDeJogos;
+    }
 }

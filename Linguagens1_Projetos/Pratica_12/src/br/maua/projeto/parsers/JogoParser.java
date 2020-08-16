@@ -17,7 +17,9 @@ public class JogoParser {
                 json.getString("plataforma"),
                 json.getString("nome")
         );
-        jogo.setStatus(json.ge);
+        jogo.setStatus(
+                StatusParser.toStatus(json.getString("status"))
+        );
         return jogo;
     }
 }
