@@ -1,5 +1,7 @@
 package br.maua.implementacoes.arquivo;
 
+import org.json.JSONArray;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
