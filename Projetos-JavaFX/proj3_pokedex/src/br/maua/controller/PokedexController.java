@@ -1,4 +1,5 @@
-package br.alura.controller;
+package br.maua.controller;
 
 public class PokedexController {
+
 }
