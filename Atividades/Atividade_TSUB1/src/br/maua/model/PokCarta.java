@@ -17,6 +17,30 @@ public class PokCarta {
         this.colecao = colecao;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getRaridade() {
+        return raridade;
+    }
+
+    public String getSerie() {
+        return serie;
+    }
+
+    public String getColecao() {
+        return colecao;
+    }
+
     @Override
     public String toString() {
         return "PokCarta{" +

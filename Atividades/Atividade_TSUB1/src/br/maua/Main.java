@@ -15,8 +15,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("Controller/pokeview.fxml"));
-        primaryStage.setTitle("Segunda Aplicação JavaFX");
-        primaryStage.setScene(new Scene(root, 354, 527));
+        primaryStage.setTitle("Pokedex");
+        primaryStage.setScene(new Scene(root, 750, 527));
         primaryStage.show();
     }
 }
