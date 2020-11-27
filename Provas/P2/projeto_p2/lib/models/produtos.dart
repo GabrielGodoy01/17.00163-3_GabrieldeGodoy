@@ -1,7 +1,7 @@
 class MyProdutos{
   var _nome;
   var _valor;
-  var _quatidade;
+  var _quantidade;
   var _urlImg;
 
   MyProdutos(this._nome, this._valor, this._quantidade, this._urlImg);

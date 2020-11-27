@@ -19,16 +19,19 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
 
   final controladorUrlImage = TextEditingController();
 
+  var _logoempresa = "assets/logo_empresa.jpg";
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
           body: Column(
             children: [
-              SizedBox(width:200, height: 100,child: Image.network("https://upload.wikimedia.org/wikipedia/commons/c/cf/Boku_no_Hero_Academia_Logo.png")),
-              meuTextFieldPersonalizado(controladorNome, "Informe o nome do produto: ", "Nome:", Icon(Icons.drive_file_rename_outline)),
-              meuTextFieldPersonalizado(controladorValor, "Informe o valor do produto: ", "Valor:", Icon(Icons.drive_file_rename_outline)),
-              meuTextFieldPersonalizado(controladorQuantidade, "Informe a quantidade deste produto: ", "Quantidade:", Icon(Icons.ac_unit_outlined)),
+              SizedBox(width:350, height: 150,child: Image.asset(_logoempresa)),
+              meuTextFieldPersonalizado(controladorNome, "Informe o nome do produto: ", "Nome:", Icon(IconData(57602, fontFamily: 'MaterialIcons'))),
+              meuTextFieldPersonalizado(controladorValor, "Informe o valor do produto: ", "Valor:", Icon(IconData(58005, fontFamily: 'MaterialIcons'))),
+              meuTextFieldPersonalizado(controladorQuantidade, "Informe a quantidade deste produto: ", "Quantidade:", Icon(IconData(57378, fontFamily: 'MaterialIcons'))),
               meuTextFieldPersonalizado(controladorUrlImage, "Informe a URL da imagem do produto: ", "URL Imagem:", Icon(Icons.image)),
               FlatButton(onPressed: (){
                 adicionar_novo_registro();
@@ -38,8 +41,11 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
                   itemBuilder: (context, index){
                     return ListTile(
                       title: Text(_myProdutosList[index].nome),
-                      subtitle: Text(_myProdutosList[index].valor),
-                      : Text(_myProdutosList[index].quantidade),
+                      subtitle: Text("R\$ " + _myProdutosList[index].valor),
+                      trailing: Icon(Icons.keyboard_arrow_right),
+                      onTap: () {
+                        print(Text(_myProdutosList[index].quantidade));
+                      },
                       leading: Image.network(_myProdutosList[index].image),
                     );
                   },
