@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_p2/screens/pagina_de_cadastro.dart';
+import 'package:projeto_p2/screens/pagina_localizacao.dart';
 
 class PaginaEstoque extends StatelessWidget {
   @override
@@ -7,6 +8,14 @@ class PaginaEstoque extends StatelessWidget {
     var _logoempresa = "assets/logo_empresa.jpg";
     return SafeArea(
       child: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.send),
+          onPressed: () async{
+            Navigator.push(context, MaterialPageRoute(builder: (_) {
+              return PaginaLocalizacao();
+            }));
+          },
+        ),
         resizeToAvoidBottomPadding: false,
         backgroundColor: Colors.white,
         body: Column(

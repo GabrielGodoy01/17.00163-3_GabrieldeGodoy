@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_p2/models/produtos.dart';
+import 'package:projeto_p2/models/via_cep.dart';
 import 'package:projeto_p2/screens/pagina_estoque.dart';
+import 'package:projeto_p2/screens/pagina_localizacao.dart';
+import 'package:projeto_p2/utilities/network_cep.dart';
 
 
 class PaginaDeCadastro extends StatefulWidget {
@@ -25,6 +28,14 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+          floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.send),
+            onPressed: () async{
+              Navigator.push(context, MaterialPageRoute(builder: (_) {
+                return PaginaLocalizacao();
+              }));
+            },
+          ),
           resizeToAvoidBottomPadding: false,
         backgroundColor: Colors.white,
           body: Column(
@@ -66,9 +77,10 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
                   }));
                 },
               ),
-            ],
-          )
 
+            ],
+
+          )
       ),
     );
   }
