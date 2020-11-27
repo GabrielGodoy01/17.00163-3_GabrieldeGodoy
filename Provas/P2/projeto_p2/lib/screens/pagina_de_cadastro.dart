@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:projeto_p2/models/produtos.dart';
 import 'package:projeto_p2/screens/pagina_estoque.dart';
 
-class PaginaDeCadastro extends StatefulWidget {
-  @override
-  _PaginaDeCadastroState createState() => _PaginaDeCadastroState();
-}
 
-class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
+
+
+class PaginaDeCadastro extends StatelessWidget{
   final _myProdutosList = [];
 
   final controladorNome = TextEditingController();
@@ -39,22 +37,7 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
                     adicionar_novo_registro();
                   },
                   child: Text("Cadastrar")),
-              Expanded(
-                child: ListView.builder(
-                  itemBuilder: (context, index){
-                    return ListTile(
-                      title: Text(_myProdutosList[index].nome),
-                      subtitle: Text("R\$ " + _myProdutosList[index].valor),
-                      trailing: Icon(Icons.keyboard_arrow_right),
-                      onTap: () {
-                        print(Text(_myProdutosList[index].quantidade));
-                      },
-                      leading: Image.network(_myProdutosList[index].image),
-                    );
-                  },
-                  itemCount: _myProdutosList.length,
-                ),
-              ),
+
               RaisedButton(child: const Text('Conferir Estoque'),
                 color: Colors.blue,
                 elevation: 4.0,
@@ -84,8 +67,8 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
   }
 
   void adicionar_novo_registro() {
-    setState(() {
+    //setState(() {
       _myProdutosList.add(MyProdutos(controladorNome.text, controladorValor.text,controladorQuantidade.text, controladorUrlImage.text));
       print(_myProdutosList);
-    });
+    //});
   }}
