@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-class ResultCep {
+class ViaCep {
   String cep;
   String logradouro;
   String complemento;
@@ -11,7 +11,7 @@ class ResultCep {
   String ibge;
   String gia;
 
-  ResultCep({
+  ViaCep({
     this.cep,
     this.logradouro,
     this.complemento,
@@ -23,11 +23,11 @@ class ResultCep {
     this.gia,
   });
 
-  factory ResultCep.fromJson(String str) => ResultCep.fromMap(json.decode(str));
+  factory ViaCep.fromJson(String str) => ViaCep.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
-  factory ResultCep.fromMap(Map<String, dynamic> json) => ResultCep(
+  factory ViaCep.fromMap(Map<String, dynamic> json) => ViaCep(
     cep: json["cep"],
     logradouro: json["logradouro"],
     complemento: json["complemento"],
