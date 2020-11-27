@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:projeto_p2/models/produtos.dart';
 import 'package:projeto_p2/models/via_cep.dart';
 import 'package:projeto_p2/screens/pagina_estoque.dart';
@@ -45,9 +46,11 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
           ),
         ),
           appBar: new AppBar(
+            title: Text("Cadastro de vendas", style: GoogleFonts.arimo(),),
+            backgroundColor: Colors.redAccent.shade200,
             leading: Builder(
               builder: (context) => IconButton(
-                icon: new Icon(Icons.settings),
+                icon: new Icon(IconData(61720, fontFamily: 'MaterialIcons')),
                 onPressed: () => Scaffold.of(context).openDrawer(),
               ),
             ),
@@ -70,28 +73,13 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
               meuTextFieldPersonalizado(controladorQuantidade, "Informe a quantidade deste produto: ", "Quantidade:", Icon(IconData(57378, fontFamily: 'MaterialIcons'))),
               meuTextFieldPersonalizado(controladorUrlImage, "Informe a URL da imagem do produto: ", "URL Imagem:", Icon(Icons.image)),
               FlatButton(
-                  color: Colors.redAccent,
+                  color: Colors.redAccent.shade200,
                   onPressed: (){
                     adicionar_novo_registro();
                   },
-                  child: Text("Cadastrar")),
-              Expanded(
-                child: ListView.builder(
-                  itemBuilder: (context, index){
-                    return ListTile(
-                      title: Text(_myProdutosList[index].nome),
-                      subtitle: Text("R\$ " + _myProdutosList[index].valor),
-                      trailing: Icon(Icons.keyboard_arrow_right),
-                      onTap: () {
-                        print(Text(_myProdutosList[index].quantidade));
-                      },
-                      leading: Image.network(_myProdutosList[index].image),
-                    );
-                  },
-                  itemCount: _myProdutosList.length,
-                ),
-              ),
-              RaisedButton(child: const Text('Conferir Estoque'),
+                  child: Text("Cadastrar"), textColor: Colors.white,),
+
+              RaisedButton(child: const Text('Conferir Estoque',),
                 color: Colors.blue,
                 elevation: 4.0,
                 splashColor: Colors.red,
