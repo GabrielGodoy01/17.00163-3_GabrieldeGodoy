@@ -55,13 +55,16 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
               ),
             ),
           ),
-          floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.send),
+
+          floatingActionButton: FloatingActionButton.extended(
+            icon: Icon(Icons.send),
+            backgroundColor: Colors.redAccent.shade200,
             onPressed: () async{
               Navigator.push(context, MaterialPageRoute(builder: (_) {
                 return PaginaLocalizacao();
               }));
             },
+            label: Text("Checar CEP", style: GoogleFonts.arimo(),),
           ),
           resizeToAvoidBottomPadding: false,
         backgroundColor: Colors.white,
@@ -77,19 +80,7 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
                   onPressed: (){
                     adicionar_novo_registro();
                   },
-                  child: Text("Cadastrar"), textColor: Colors.white,),
-
-              RaisedButton(child: const Text('Conferir Estoque',),
-                color: Colors.blue,
-                elevation: 4.0,
-                splashColor: Colors.red,
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (_) {
-                    return PaginaEstoque();
-                  }));
-                },
-              ),
-
+                  child: Text("Cadastrar", style: GoogleFonts.arimo(),), textColor: Colors.white,),
             ],
 
           )
