@@ -8,7 +8,7 @@ class MyProdutos{
 
   @override
   String toString() {
-    return 'MyHero{_nome: $_nome, _valor: $_valor, _quantidade: $_quantidade, _urlImg: $_urlImg}';
+    return 'MyProdutos{_nome: $_nome, _valor: $_valor, _quantidade: $_quantidade, _urlImg: $_urlImg}';
   }
 
   get quantidade => _quantidade;
