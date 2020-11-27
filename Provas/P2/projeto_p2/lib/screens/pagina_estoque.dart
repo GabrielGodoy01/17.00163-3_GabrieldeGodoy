@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_p2/screens/pagina_de_cadastro.dart';
 
-class PaginaEstoque extends StatelessWidget {
+class PaginaEstoque extends StatefulWidget {
+  @override
+  _PaginaEstoqueState createState() => _PaginaEstoqueState();
+}
+
+class _PaginaEstoqueState extends State<PaginaEstoque> {
   @override
   Widget build(BuildContext context) {
     var _logoempresa = "assets/logo_empresa.jpg";
@@ -14,22 +19,23 @@ class PaginaEstoque extends StatelessWidget {
             Container(
               alignment: Alignment.topCenter,
                 child: SizedBox(width:350, height: 150,child: Image.asset(_logoempresa),)),
-            GestureDetector(
-            child: Hero(
-              tag: 'botao',
-              child: FlatButton(
-                  color: Colors.redAccent,
-                  child: Text("Cadastrar")
-              ),
+            FlatButton(
+                color: Colors.redAccent,
+                onPressed: (){
+                  //adicionar_novo_registro();
+                },
+                child: Text("Atualizar Estoque")),
+            RaisedButton(child: const Text('Menu de Cadastro'),
+              color: Colors.blue,
+              elevation: 4.0,
+              splashColor: Colors.red,
+              onPressed: () {
+                  Navigator.pop(context);
+                },
             ),
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (_) {
-                return PaginaDeCadastro();
-              }));
-            },
-          ),
           ]
         ),
+
       ),
     );
   }
