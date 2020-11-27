@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_p2/models/produtos.dart';
-import 'package:projeto_p2/screens/pagina_estoque.dart';
 
 class PaginaDeCadastro extends StatefulWidget {
   @override
@@ -54,17 +53,7 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
                   },
                   itemCount: _myProdutosList.length,
                 ),
-              ),
-              RaisedButton(child: const Text('Conferir Estoque'),
-                color: Colors.blue,
-                elevation: 4.0,
-                splashColor: Colors.red,
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (_) {
-                    return PaginaEstoque();
-                  }));
-                },
-              ),
+              )
             ],
           )
 
