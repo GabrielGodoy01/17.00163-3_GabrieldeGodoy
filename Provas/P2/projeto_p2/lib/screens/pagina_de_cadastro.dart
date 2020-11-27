@@ -28,6 +28,30 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        drawer: new Drawer(
+          child: ListView.builder(
+            itemBuilder: (context, index){
+              return ListTile(
+                title: Text(_myProdutosList[index].nome),
+                subtitle: Text("R\$ " + _myProdutosList[index].valor),
+                trailing: Icon(Icons.keyboard_arrow_right),
+                onTap: () {
+                  print(Text(_myProdutosList[index].quantidade));
+                },
+                leading: Image.network(_myProdutosList[index].image),
+              );
+            },
+            itemCount: _myProdutosList.length,
+          ),
+        ),
+          appBar: new AppBar(
+            leading: Builder(
+              builder: (context) => IconButton(
+                icon: new Icon(Icons.settings),
+                onPressed: () => Scaffold.of(context).openDrawer(),
+              ),
+            ),
+          ),
           floatingActionButton: FloatingActionButton(
             child: Icon(Icons.send),
             onPressed: () async{
@@ -81,6 +105,7 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
             ],
 
           )
+
       ),
     );
   }
