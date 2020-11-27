@@ -37,7 +37,12 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
                 subtitle: Text("R\$ " + _myProdutosList[index].valor),
                 trailing: Icon(Icons.keyboard_arrow_right),
                 onTap: () {
-                  print(Text(_myProdutosList[index].quantidade));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PaginaEstoque(nome: _myProdutosList[index].nome, valor: _myProdutosList[index].valor , quantidade: _myProdutosList[index].quantidade, urlImage: _myProdutosList[index].image),
+                    ),
+                  );
                 },
                 leading: Image.network(_myProdutosList[index].image),
               );
