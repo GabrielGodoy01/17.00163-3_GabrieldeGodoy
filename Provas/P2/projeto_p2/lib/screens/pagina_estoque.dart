@@ -14,20 +14,13 @@ class PaginaEstoque extends StatelessWidget {
             Container(
               alignment: Alignment.topCenter,
                 child: SizedBox(width:350, height: 150,child: Image.asset(_logoempresa),)),
-            GestureDetector(
-            child: Hero(
-              tag: 'botao',
-              child: FlatButton(
-                  color: Colors.redAccent,
-                  child: Text("Cadastrar")
-              ),
-            ),
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (_) {
-                return PaginaDeCadastro();
-              }));
-            },
-          ),
+            RaisedButton(child: const Text('Tela de Cadastro'),
+              color: Colors.blue,
+              elevation: 4.0,
+              splashColor: Colors.red,
+              onPressed: () {
+                Navigator.pop(context);
+                })
           ]
         ),
       ),
