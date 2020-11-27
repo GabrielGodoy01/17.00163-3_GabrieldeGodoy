@@ -39,14 +39,25 @@ class _PaginaEstoqueState extends State<PaginaEstoque> {
               alignment: Alignment.topCenter,
                 child: SizedBox(width:350, height: 150,child: Image.asset(_logoempresa),)),
             SizedBox(width:350, height: 150,child: Image.network(widget.urlImage)),
+            Text(" "),
+            Text("-----------------------------------------------------------------------------------"),
+            Text(" "),
+            Text("Dados do produto: ", style: GoogleFonts.anton()), ,
             Text("Nome: " + widget.nome),
-
+            Text("Valor: R\$ " + widget.valor),
+            Text("Quantidade: " + widget.quantidade),
+            Text(" "),
+            Text("-----------------------------------------------------------------------------------"),
+            Text(" "),
+            Text(" "),
+            Text(" "),
             RaisedButton(child: const Text('Tela de Cadastro'),
-              color: Colors.blue,
+              color: Colors.redAccent.shade200,
               elevation: 4.0,
-              splashColor: Colors.red,
+              splashColor: Colors.black,
               onPressed: () {
                 Navigator.pop(context);
+
                 })
           ]
         ),
