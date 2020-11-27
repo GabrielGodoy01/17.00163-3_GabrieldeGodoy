@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_p2/models/produtos.dart';
-<<<<<<< HEAD
-=======
 import 'package:projeto_p2/screens/pagina_estoque.dart';
->>>>>>> parent of 396e3f7... Update pagina_de_cadastro.dart
+
 
 class PaginaDeCadastro extends StatefulWidget {
   @override
@@ -11,7 +9,7 @@ class PaginaDeCadastro extends StatefulWidget {
 }
 
 class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
-  final _myProdutosList = [];
+  final _myProdutosList = [MyProdutos("as", "as", "as", "https://i.pinimg.com/originals/9e/ca/7b/9eca7b75902d31804b525746e8a1f23d.jpg")];
 
   final controladorNome = TextEditingController();
 
@@ -57,9 +55,6 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
                   },
                   itemCount: _myProdutosList.length,
                 ),
-<<<<<<< HEAD
-              )
-=======
               ),
               RaisedButton(child: const Text('Conferir Estoque'),
                 color: Colors.blue,
@@ -71,7 +66,6 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
                   }));
                 },
               ),
->>>>>>> parent of 396e3f7... Update pagina_de_cadastro.dart
             ],
           )
 
