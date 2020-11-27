@@ -7,9 +7,7 @@ class PaginaDeCadastro extends StatefulWidget {
 }
 
 class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
-  final _myProdutosList = [MyProdutos("Memória DDR4 Corsair", "250", "2", "https://w7.pngwing.com/pngs/421/211/png-transparent-ddr4-sdram-corsair-vengeance-rgb-ddr4-corsair-components-dimm-computer-memory-ddr4-ram-electronic-device-microcontroller.png")
-
-  ];
+  final _myProdutosList = [];
 
   final controladorNome = TextEditingController();
 
@@ -25,6 +23,7 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+          resizeToAvoidBottomPadding: false,
         backgroundColor: Colors.white,
           body: Column(
             children: [
@@ -33,9 +32,12 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
               meuTextFieldPersonalizado(controladorValor, "Informe o valor do produto: ", "Valor:", Icon(IconData(58005, fontFamily: 'MaterialIcons'))),
               meuTextFieldPersonalizado(controladorQuantidade, "Informe a quantidade deste produto: ", "Quantidade:", Icon(IconData(57378, fontFamily: 'MaterialIcons'))),
               meuTextFieldPersonalizado(controladorUrlImage, "Informe a URL da imagem do produto: ", "URL Imagem:", Icon(Icons.image)),
-              FlatButton(onPressed: (){
-                adicionar_novo_registro();
-              }, child: Text("Cadastrar")),
+              FlatButton(
+                  color: Colors.redAccent,
+                  onPressed: (){
+                    adicionar_novo_registro();
+                  },
+                  child: Text("Cadastrar")),
               Expanded(
                 child: ListView.builder(
                   itemBuilder: (context, index){
@@ -65,7 +67,7 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
       child: TextField(controller: controlador, decoration: InputDecoration(
           hintText: hint,
           labelText: label,
-          icon: icone
+          icon: icone,
       ),),
     );
   }
