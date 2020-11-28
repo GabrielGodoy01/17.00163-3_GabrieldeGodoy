@@ -41,12 +41,12 @@ class _PaginaEstoqueState extends State<PaginaEstoque> {
 
         body: Column(
           children: [
+
             Container(
               alignment: Alignment.topCenter,
                 child: SizedBox(width:350, height: 150,child: Image.asset(_logoempresa),)),
+            Text("-------------------------------------------------------------------------------------"),
             SizedBox(width:350, height: 150,child: Image.network(widget.urlImage)),
-            Text(" "),
-            Text("-----------------------------------------------------------------------------------"),
             Text(" "),
             Text("Dados do produto: ", style: new TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold, color: Colors.black.withOpacity(0.9),)),
             Text("Nome: " + widget.nome, style: TextStyle(fontSize: 20.0,),),
@@ -54,7 +54,7 @@ class _PaginaEstoqueState extends State<PaginaEstoque> {
             Text("Quantidade: " + widget.quantidade, style: TextStyle(fontSize: 20.0,)),
             Text("CEP: " + widget.cep, style: TextStyle(fontSize: 20.0,)),
             Text(" "),
-            Text("-----------------------------------------------------------------------------------"),
+            Text("-------------------------------------------------------------------------------------"),
             Text(" "),
             Text(" "),
             Text(" "),

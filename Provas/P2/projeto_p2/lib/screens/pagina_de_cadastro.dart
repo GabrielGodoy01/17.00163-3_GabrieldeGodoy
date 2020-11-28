@@ -13,7 +13,7 @@ class PaginaDeCadastro extends StatefulWidget {
 }
 
 class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
-  final _myProdutosList = [MyProdutos("as", "as", "as", "https://i.pinimg.com/originals/9e/ca/7b/9eca7b75902d31804b525746e8a1f23d.jpg", "09580400")];
+  final _myProdutosList = [MyProdutos("Corsair Memória RAM 2600MHZ", "240", "3", "https://im.promobit.com.br/295197101915980249344523131878.png", "09580400")];
 
   final controladorNome = TextEditingController();
 
@@ -52,12 +52,13 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
             itemCount: _myProdutosList.length,
           ),
         ),
+
           appBar: new AppBar(
             title: Text("Cadastro de vendas", style: GoogleFonts.arimo(),),
             backgroundColor: Colors.redAccent.shade200,
             leading: Builder(
               builder: (context) => IconButton(
-                icon: new Icon(IconData(61720, fontFamily: 'MaterialIcons')),
+                icon: new Icon(IconData(60098, fontFamily: 'MaterialIcons', matchTextDirection: true)),
                 onPressed: () => Scaffold.of(context).openDrawer(),
               ),
             ),
@@ -76,10 +77,12 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
               Text(" "),
               FlatButton(
                   color: Colors.redAccent.shade200,
+                  splashColor: Colors.blueAccent,
                   onPressed: (){
                     adicionar_novo_registro();
                   },
-                  child: Text("Cadastrar", style: GoogleFonts.arimo(),), textColor: Colors.white,),
+                  child: Text("Cadastrar", style: GoogleFonts.arimo(),), textColor: Colors.white,
+              ),
             ],
 
           )

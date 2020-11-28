@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:projeto_p2/models/via_cep.dart';
 import 'package:projeto_p2/utilities/network_cep.dart';
 
 class PaginaLocalizacao extends StatefulWidget {
@@ -11,16 +12,7 @@ class PaginaLocalizacao extends StatefulWidget {
 }
 
 class _PaginaLocalizacaoState extends State<PaginaLocalizacao> {
-  var _searchCepController = TextEditingController();
-  bool _loading = false;
-  bool _enableField = true;
-  String _result;
-
-  @override
-  void dispose() {
-    super.dispose();
-    _searchCepController.clear();
-  }
+  var _dados = "";
 
   @override
   Widget build(BuildContext context) {
@@ -29,78 +21,47 @@ class _PaginaLocalizacaoState extends State<PaginaLocalizacao> {
         title: Text("Consultar CEP", style: GoogleFonts.arimo(),),
         backgroundColor: Colors.redAccent.shade200,
       ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            _buildSearchCepTextField(),
-            _buildSearchCepButton(),
-            _buildResultForm()
-          ],
-        ),
+      body: Column(
+          children: [
+            Text(_dados),
+            FlatButton(
+              color: Colors.redAccent.shade200,
+              splashColor: Colors.blueAccent,
+              child: Text("Checar CEP", style: GoogleFonts.arimo(),),
+              textColor: Colors.white,
+              onPressed: () async {
+                mostrarResultados();
+              },
+            ),
+
+          ]
       ),
     );
   }
 
-  Widget _buildSearchCepTextField() {
-    return TextField(
-      autofocus: true,
-      keyboardType: TextInputType.number,
-      textInputAction: TextInputAction.done,
-      decoration: InputDecoration(labelText: 'Cep', border: const OutlineInputBorder(), focusColor: Colors.redAccent, fillColor: Colors.redAccent.shade200), style: GoogleFonts.poppins(),cursorColor: Colors.black,
-      controller: _searchCepController,
-      enabled: _enableField,
-    );
-  }
-
-  Widget _buildSearchCepButton() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 20.0),
-      child: RaisedButton(
-        color: Colors.redAccent.shade200,
-        onPressed: _searchCep,
-        child: _loading ? _circularLoading() : Text('Consultar', style: GoogleFonts.arimo(),), elevation: 10,textColor: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      ),
-    );
-  }
-
-  void _searching(bool enable) {
-    setState(() {
-      _result = enable ? '' : _result;
-      _loading = enable;
-      _enableField = !enable;
-    });
-  }
-
-  Widget _circularLoading() {
-    return Container(
-      height: 15.0,
-      width: 15.0,
-      child: CircularProgressIndicator(),
-    );
-  }
-
-  Future _searchCep() async {
-    _searching(true);
-
-    final cep = _searchCepController.text;
-
-    final resultCep = await NetworkCep.fetchCep(cep: cep);
-    print(resultCep.localidade);
-
-    setState(() {
-      _result = resultCep.toJson();
-    });
-
-    _searching(false);
-  }
-
-  Widget _buildResultForm() {
-    return Container(
-      padding: EdgeInsets.only(top: 20.0),
-      child: Text(_result ?? ''),
-    );
+  Future<void> mostrarResultados() async {
+    var requisicao = NetworkCep(
+        url: "https://viacep.com.br/ws/" + widget.cep + "/json/");
+    var dados = ViaCep.fromJson(await requisicao.getData());
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: new Text("Dados do CEP: "+dados.cep),
+            content: new Text("Logradouro: "+ dados.logradouro + "\n" + "Complemento: " +
+                dados.complemento + "\n"+ "Bairro: " + dados.bairro + "\n" + "Localidade: "
+                + dados.localidade + "\n" + "UF: " + dados.uf + "\n"),
+            actions: <Widget>[
+              new FlatButton(
+                child: new Text("Fechar"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        });
+    print(dados.logradouro);
+    print(dados.cep);
   }
 }
