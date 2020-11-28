@@ -8,8 +8,9 @@ class PaginaEstoque extends StatefulWidget {
   var valor;
   var quantidade;
   var urlImage;
+  var cep;
 
-  PaginaEstoque({Key key, this.nome, this.valor, this.quantidade, this.urlImage}) : super(key: key);
+  PaginaEstoque({Key key, this.nome, this.valor, this.quantidade, this.urlImage, this.cep}) : super(key: key);
 
   @override
   _PaginaEstoqueState createState() => _PaginaEstoqueState();
@@ -21,18 +22,23 @@ class _PaginaEstoqueState extends State<PaginaEstoque> {
     var _logoempresa = "assets/logo_empresa.jpg";
     return SafeArea(
       child: Scaffold(
+        appBar: new AppBar(
+          title: Text("Sobre o produto", style: GoogleFonts.arimo(),),
+          backgroundColor: Colors.redAccent.shade200, ),
+
         floatingActionButton: FloatingActionButton.extended(
           icon: Icon(Icons.send),
           backgroundColor: Colors.redAccent.shade200,
           onPressed: () async{
             Navigator.push(context, MaterialPageRoute(builder: (_) {
-              return PaginaLocalizacao();
+              return PaginaLocalizacao(cep: widget.cep);
             }));
           },
           label: Text("Checar CEP", style: GoogleFonts.arimo(),),
         ),
         resizeToAvoidBottomPadding: false,
         backgroundColor: Colors.white,
+
         body: Column(
           children: [
             Container(
@@ -42,23 +48,16 @@ class _PaginaEstoqueState extends State<PaginaEstoque> {
             Text(" "),
             Text("-----------------------------------------------------------------------------------"),
             Text(" "),
-            Text("Dados do produto: ", style: GoogleFonts.anton()), ,
-            Text("Nome: " + widget.nome),
-            Text("Valor: R\$ " + widget.valor),
-            Text("Quantidade: " + widget.quantidade),
+            Text("Dados do produto: ", style: new TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold, color: Colors.black.withOpacity(0.9),)),
+            Text("Nome: " + widget.nome, style: TextStyle(fontSize: 20.0,),),
+            Text("Valor: R\$ " + widget.valor, style: TextStyle(fontSize: 20.0,)),
+            Text("Quantidade: " + widget.quantidade, style: TextStyle(fontSize: 20.0,)),
+            Text("CEP: " + widget.cep, style: TextStyle(fontSize: 20.0,)),
             Text(" "),
             Text("-----------------------------------------------------------------------------------"),
             Text(" "),
             Text(" "),
             Text(" "),
-            RaisedButton(child: const Text('Tela de Cadastro'),
-              color: Colors.redAccent.shade200,
-              elevation: 4.0,
-              splashColor: Colors.black,
-              onPressed: () {
-                Navigator.pop(context);
-
-                })
           ]
         ),
       ),

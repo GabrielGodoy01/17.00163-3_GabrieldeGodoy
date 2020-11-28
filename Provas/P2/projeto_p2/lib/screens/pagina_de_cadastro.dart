@@ -13,7 +13,7 @@ class PaginaDeCadastro extends StatefulWidget {
 }
 
 class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
-  final _myProdutosList = [MyProdutos("as", "as", "as", "https://i.pinimg.com/originals/9e/ca/7b/9eca7b75902d31804b525746e8a1f23d.jpg")];
+  final _myProdutosList = [MyProdutos("as", "as", "as", "https://i.pinimg.com/originals/9e/ca/7b/9eca7b75902d31804b525746e8a1f23d.jpg", "09580400")];
 
   final controladorNome = TextEditingController();
 
@@ -22,6 +22,8 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
   final controladorQuantidade = TextEditingController();
 
   final controladorUrlImage = TextEditingController();
+
+  final controladorCep = TextEditingController();
 
   var _logoempresa = "assets/logo_empresa.jpg";
 
@@ -40,7 +42,7 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => PaginaEstoque(nome: _myProdutosList[index].nome, valor: _myProdutosList[index].valor , quantidade: _myProdutosList[index].quantidade, urlImage: _myProdutosList[index].image),
+                      builder: (context) => PaginaEstoque(nome: _myProdutosList[index].nome, valor: _myProdutosList[index].valor , quantidade: _myProdutosList[index].quantidade, urlImage: _myProdutosList[index].image, cep: _myProdutosList[index].cep),
                     ),
                   );
                 },
@@ -61,16 +63,6 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
             ),
           ),
 
-          floatingActionButton: FloatingActionButton.extended(
-            icon: Icon(Icons.send),
-            backgroundColor: Colors.redAccent.shade200,
-            onPressed: () async{
-              Navigator.push(context, MaterialPageRoute(builder: (_) {
-                return PaginaLocalizacao();
-              }));
-            },
-            label: Text("Checar CEP", style: GoogleFonts.arimo(),),
-          ),
           resizeToAvoidBottomPadding: false,
         backgroundColor: Colors.white,
           body: Column(
@@ -80,6 +72,8 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
               meuTextFieldPersonalizado(controladorValor, "Informe o valor do produto: ", "Valor:", Icon(IconData(58005, fontFamily: 'MaterialIcons'))),
               meuTextFieldPersonalizado(controladorQuantidade, "Informe a quantidade deste produto: ", "Quantidade:", Icon(IconData(57378, fontFamily: 'MaterialIcons'))),
               meuTextFieldPersonalizado(controladorUrlImage, "Informe a URL da imagem do produto: ", "URL Imagem:", Icon(Icons.image)),
+              meuTextFieldPersonalizado(controladorCep, "Informe o CEP do destino do produto: ", "CEP:", Icon(IconData(60419, fontFamily: 'MaterialIcons'))),
+              Text(" "),
               FlatButton(
                   color: Colors.redAccent.shade200,
                   onPressed: (){
@@ -107,7 +101,7 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
 
   void adicionar_novo_registro() {
     setState(() {
-      _myProdutosList.add(MyProdutos(controladorNome.text, controladorValor.text,controladorQuantidade.text, controladorUrlImage.text));
+      _myProdutosList.add(MyProdutos(controladorNome.text, controladorValor.text,controladorQuantidade.text, controladorUrlImage.text, controladorCep.text));
       print(_myProdutosList);
     });
   }}

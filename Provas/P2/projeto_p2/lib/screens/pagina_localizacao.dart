@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:projeto_p2/utilities/network_cep.dart';
 
 class PaginaLocalizacao extends StatefulWidget {
+  var cep;
+
+  PaginaLocalizacao({Key key, this.cep}) : super(key: key);
   @override
   _PaginaLocalizacaoState createState() => _PaginaLocalizacaoState();
 }
@@ -22,7 +26,8 @@ class _PaginaLocalizacaoState extends State<PaginaLocalizacao> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Consultar CEP'),
+        title: Text("Consultar CEP", style: GoogleFonts.arimo(),),
+        backgroundColor: Colors.redAccent.shade200,
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20.0),
@@ -43,7 +48,7 @@ class _PaginaLocalizacaoState extends State<PaginaLocalizacao> {
       autofocus: true,
       keyboardType: TextInputType.number,
       textInputAction: TextInputAction.done,
-      decoration: InputDecoration(labelText: 'Cep'),
+      decoration: InputDecoration(labelText: 'Cep', border: const OutlineInputBorder(), focusColor: Colors.redAccent, fillColor: Colors.redAccent.shade200), style: GoogleFonts.poppins(),cursorColor: Colors.black,
       controller: _searchCepController,
       enabled: _enableField,
     );
@@ -53,8 +58,9 @@ class _PaginaLocalizacaoState extends State<PaginaLocalizacao> {
     return Padding(
       padding: const EdgeInsets.only(top: 20.0),
       child: RaisedButton(
+        color: Colors.redAccent.shade200,
         onPressed: _searchCep,
-        child: _loading ? _circularLoading() : Text('Consultar'),
+        child: _loading ? _circularLoading() : Text('Consultar', style: GoogleFonts.arimo(),), elevation: 10,textColor: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       ),
     );
@@ -82,7 +88,7 @@ class _PaginaLocalizacaoState extends State<PaginaLocalizacao> {
     final cep = _searchCepController.text;
 
     final resultCep = await NetworkCep.fetchCep(cep: cep);
-    print(resultCep.localidade); // Exibindo somente a localidade no terminal
+    print(resultCep.localidade);
 
     setState(() {
       _result = resultCep.toJson();
