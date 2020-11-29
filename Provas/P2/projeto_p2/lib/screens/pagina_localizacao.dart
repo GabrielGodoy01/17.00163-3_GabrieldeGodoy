@@ -21,20 +21,25 @@ class _PaginaLocalizacaoState extends State<PaginaLocalizacao> {
         title: Text("Consultar CEP", style: GoogleFonts.arimo(),),
         backgroundColor: Colors.redAccent.shade200,
       ),
-      body: Column(
-          children: [
-            Text(_dados),
-            FlatButton(
-              color: Colors.redAccent.shade200,
-              splashColor: Colors.blueAccent,
-              child: Text("Checar CEP", style: GoogleFonts.arimo(),),
-              textColor: Colors.white,
-              onPressed: () async {
-                mostrarResultados();
-              },
-            ),
+      body: Center(
+        child: Column(
+            children: [
+              Text(_dados),
+              Container(
+                margin: EdgeInsets.all(20),
+                child: FlatButton(
+                  color: Colors.redAccent.shade200,
+                  splashColor: Colors.blueAccent,
+                  child: Text("Checar CEP", style: GoogleFonts.arimo(),),
+                  textColor: Colors.white,
+                  onPressed: () async {
+                    mostrarResultados();
+                  },
+                ),
+              ),
 
-          ]
+            ]
+        ),
       ),
     );
   }
@@ -61,7 +66,5 @@ class _PaginaLocalizacaoState extends State<PaginaLocalizacao> {
             ],
           );
         });
-    print(dados.logradouro);
-    print(dados.cep);
   }
 }

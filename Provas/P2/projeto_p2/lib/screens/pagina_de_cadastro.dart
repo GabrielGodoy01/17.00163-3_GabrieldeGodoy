@@ -66,32 +66,34 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
 
           resizeToAvoidBottomPadding: false,
         backgroundColor: Colors.white,
-          body: Column(
-            children: [
-              SizedBox(width:350, height: 150,child: Image.asset(_logoempresa)),
-              meuTextFieldPersonalizado(controladorNome, "Informe o nome do produto: ", "Nome:", Icon(IconData(57602, fontFamily: 'MaterialIcons'))),
-              meuTextFieldPersonalizado(controladorValor, "Informe o valor do produto: ", "Valor:", Icon(IconData(58005, fontFamily: 'MaterialIcons'))),
-              meuTextFieldPersonalizado(controladorQuantidade, "Informe a quantidade deste produto: ", "Quantidade:", Icon(IconData(57378, fontFamily: 'MaterialIcons'))),
-              meuTextFieldPersonalizado(controladorUrlImage, "Informe a URL da imagem do produto: ", "URL Imagem:", Icon(Icons.image)),
-              meuTextFieldPersonalizado(controladorCep, "Informe o CEP do destino do produto: ", "CEP:", Icon(IconData(60419, fontFamily: 'MaterialIcons'))),
-              Text(" "),
-              FlatButton(
-                  color: Colors.redAccent.shade200,
-                  splashColor: Colors.blueAccent,
-                  onPressed: (){
-                    adicionar_novo_registro();
-                  },
-                  child: Text("Cadastrar", style: GoogleFonts.arimo(),), textColor: Colors.white,
-              ),
-            ],
+          body: ListView(
+            children: [Column(
+              children: [
+                SizedBox(width:350, height: 150,child: Image.asset(_logoempresa)),
+                meuTextField(controladorNome, "Informe o nome do produto: ", "Nome:", Icon(IconData(57602, fontFamily: 'MaterialIcons'))),
+                meuTextField(controladorValor, "Informe o valor do produto: ", "Valor:", Icon(IconData(58005, fontFamily: 'MaterialIcons'))),
+                meuTextField(controladorQuantidade, "Informe a quantidade deste produto: ", "Quantidade:", Icon(IconData(57378, fontFamily: 'MaterialIcons'))),
+                meuTextField(controladorUrlImage, "Informe a URL da imagem do produto: ", "URL Imagem:", Icon(Icons.image)),
+                meuTextField(controladorCep, "Informe o CEP do destino do produto: ", "CEP:", Icon(IconData(60419, fontFamily: 'MaterialIcons'))),
+                Text(" "),
+                FlatButton(
+                    color: Colors.redAccent.shade200,
+                    splashColor: Colors.blueAccent,
+                    onPressed: (){
+                      adicionar_novo_registro();
+                    },
+                    child: Text("Cadastrar", style: GoogleFonts.arimo(),), textColor: Colors.white,
+                ),
+              ],
 
+            ),]
           )
 
       ),
     );
   }
 
-  Widget meuTextFieldPersonalizado(TextEditingController controlador, String hint, String label, Icon icone) {
+  Widget meuTextField(TextEditingController controlador, String hint, String label, Icon icone) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: TextField(controller: controlador, decoration: InputDecoration(
