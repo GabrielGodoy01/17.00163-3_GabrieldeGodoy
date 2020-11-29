@@ -13,7 +13,8 @@ class PaginaDeCadastro extends StatefulWidget {
 }
 
 class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
-  final _myProdutosList = [MyProdutos("Corsair Memória RAM 2600MHZ", "240", "3", "https://im.promobit.com.br/295197101915980249344523131878.png", "09580400")];
+  final _myProdutosList = [MyProdutos("Corsair Memória RAM 2600MHZ", "240", "3", "https://im.promobit.com.br/295197101915980249344523131878.png", "09580400"),
+    MyProdutos("NVIDIA rtx 3080", "12000", "3", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRcOoiLFo_Wo0Inh0VJOCRGhgNvW5O2G-IlA&usqp=CAU", "09895400"),];
 
   final controladorNome = TextEditingController();
 

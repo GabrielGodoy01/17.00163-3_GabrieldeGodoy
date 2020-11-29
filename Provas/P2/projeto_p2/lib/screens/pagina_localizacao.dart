@@ -26,11 +26,12 @@ class _PaginaLocalizacaoState extends State<PaginaLocalizacao> {
             children: [
               Text(_dados),
               Container(
-                margin: EdgeInsets.all(20),
+                margin: EdgeInsets.all(100),
                 child: FlatButton(
                   color: Colors.redAccent.shade200,
                   splashColor: Colors.blueAccent,
                   child: Text("Checar CEP", style: GoogleFonts.arimo(),),
+                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 30),
                   textColor: Colors.white,
                   onPressed: () async {
                     mostrarResultados();
@@ -52,13 +53,13 @@ class _PaginaLocalizacaoState extends State<PaginaLocalizacao> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: new Text("Dados do CEP: "+dados.cep),
-            content: new Text("Logradouro: "+ dados.logradouro + "\n" + "Complemento: " +
+            title: Text("Dados do CEP: " + dados.cep, style: TextStyle(fontWeight: FontWeight.bold),),
+            content: Text("Logradouro: " + dados.logradouro + "\n" + "Complemento: " +
                 dados.complemento + "\n"+ "Bairro: " + dados.bairro + "\n" + "Localidade: "
                 + dados.localidade + "\n" + "UF: " + dados.uf + "\n"),
             actions: <Widget>[
               new FlatButton(
-                child: new Text("Fechar"),
+                child: Text("Fechar"),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
