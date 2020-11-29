@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:projeto_p2/screens/pagina_de_cadastro.dart';
 import 'package:projeto_p2/screens/pagina_localizacao.dart';
 
 class PaginaEstoque extends StatefulWidget {

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:projeto_p2/models/produtos.dart';
-import 'package:projeto_p2/models/via_cep.dart';
 import 'package:projeto_p2/screens/pagina_estoque.dart';
-import 'package:projeto_p2/screens/pagina_localizacao.dart';
-import 'package:projeto_p2/utilities/network_cep.dart';
 
 
 class PaginaDeCadastro extends StatefulWidget {
@@ -15,7 +12,7 @@ class PaginaDeCadastro extends StatefulWidget {
 class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
   final _myProdutosList = [MyProdutos("Corsair Memória RAM 2600MHZ", "240", "3", "https://im.promobit.com.br/295197101915980249344523131878.png", "09580400"),
     MyProdutos("NVIDIA Placa de Video RTX3080", "11999", "3", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRcOoiLFo_Wo0Inh0VJOCRGhgNvW5O2G-IlA&usqp=CAU", "09895400"),
-    MyProdutos("Thermaltake Gabinete Commander G41", "1099", "12", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRisKDYoykPk_jm3B9HFVoYCcVuSo99Z3b_zQ&usqp=CAU", "09895400"),
+    MyProdutos("Thermaltake Gabinete Commander G41", "1099", "12", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRisKDYoykPk_jm3B9HFVoYCcVuSo99Z3b_zQ&usqp=CAU", "04166001"),
   ];
 
   final controladorNome = TextEditingController();
@@ -34,6 +31,7 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+          resizeToAvoidBottomInset: true,
         drawer: new Drawer(
           child: ListView.builder(
             itemBuilder: (context, index){
@@ -110,6 +108,5 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
   void adicionar_novo_registro() {
     setState(() {
       _myProdutosList.add(MyProdutos(controladorNome.text, controladorValor.text,controladorQuantidade.text, controladorUrlImage.text, controladorCep.text));
-      print(_myProdutosList);
     });
   }}
