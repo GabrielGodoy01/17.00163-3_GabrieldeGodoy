@@ -65,7 +65,7 @@ class _PaginaDeCadastroState extends State<PaginaDeCadastro> {
             ),
           ),
 
-          resizeToAvoidBottomPadding: false,
+          
         backgroundColor: Colors.white,
           body: ListView(
             children: [Column(

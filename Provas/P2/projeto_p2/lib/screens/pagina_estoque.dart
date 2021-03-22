@@ -35,7 +35,7 @@ class _PaginaEstoqueState extends State<PaginaEstoque> {
           },
           label: Text("Checar CEP", style: GoogleFonts.arimo(),),
         ),
-        resizeToAvoidBottomPadding: false,
+        
         backgroundColor: Colors.white,
 
         body: Column(
