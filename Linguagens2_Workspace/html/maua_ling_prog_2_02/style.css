@@ -1,0 +1,43 @@
+/*Exemplo de comentário */
+p.final-pagina#rodape{
+    border-bottom: 1px solid black;
+    background-color:grey;
+    padding: 12px;
+    text-align: center;
+}
+
+#titulo {
+    color: blue;
+    border-bottom: 1px dashed black;
+    background-color:lightsalmon;
+}
+
+p.promocao{
+    text-align: center;
+    background-color:yellow;
+}
+
+h1 {
+    color: yellow;
+    text-align: center;
+}
+
+p#descricao{
+    background-color:yellow;
+    text-align: center;
+}
+
+.nova{
+    color: red;
+    
+}
+
+p {
+    color: blue;
+    border: 1px solid black;
+}
+
+strong {
+    color: blueviolet;
+    background-color: orange;
+}
