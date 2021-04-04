@@ -41,3 +41,42 @@ strong {
     color: blueviolet;
     background-color: orange;
 }
+
+.curso, .novo-curso, #contato {
+    background-color: aliceblue;
+}
+
+.novo-curso{
+    color: red;
+}
+
+/*.curso{
+    background-color: aliceblue;
+}
+
+.novo-curso{
+    background-color: aliceblue;
+    color: red;
+}*/
+
+article p{
+    padding: 12px;
+}
+
+#principal p.promocao{
+    padding: 12px;
+    border-bottom: #CCC solid 1px;
+}
+
+body #principal article section p.coordenadores{
+    text-align: center;
+}
+
+article > p{
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+main > article section > p.coordenadores{
+    
+}
