@@ -41,5 +41,5 @@ app.listen(7000, async () => {
       funcoes[valor.tipo](valor.dados);
     } catch (err) {}
   });
-  console.log("Microsserviço consulta. Porta 6000.");
+  console.log("Microsserviço consulta. Porta 7000.");
 });
