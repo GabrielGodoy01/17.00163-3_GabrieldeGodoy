@@ -1,16 +1,16 @@
 const express = require("express");
-const axios = require("axios");
 const app = express();
 app.use(express.json());
-
+const axios = require("axios");
 const palavraChave = "importante";
-
 const funcoes = {
   ObservacaoCriada: (observacao) => {
+    console.log("obs: " + observacao);
     observacao.status = observacao.texto.includes(palavraChave)
       ? "importante"
       : "comum";
-    axios.post("http://localhost:6000/eventos", {
+    console.log(observacao.status);
+    axios.post("http://localhost:10000/eventos", {
       tipo: "ObservacaoClassificada",
       dados: observacao,
     });
@@ -18,10 +18,13 @@ const funcoes = {
 };
 
 app.post("/eventos", (req, res) => {
+  console.log("tipo: " + req.body.tipo);
   try {
     funcoes[req.body.tipo](req.body.dados);
-  } catch (err) {}
-  res.status(200).send({ msg: "Ok" });
+  } catch (err) {
+    //console.log('tipo: ' + req.body.tipo)
+  }
+  res.status(200).send({ msg: "ok" });
 });
 
-app.listen(8000, () => console.log("Classificação. Porta 8000."));
+app.listen(7000, () => console.log("Classificação. Porta 7000."));
