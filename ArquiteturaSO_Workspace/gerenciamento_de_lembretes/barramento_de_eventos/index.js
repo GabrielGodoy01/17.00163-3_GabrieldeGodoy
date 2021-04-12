@@ -12,9 +12,9 @@ app.post("/eventos", (req, res) => {
   //envia o evento para o microsserviço de Observações
   axios.post("http://localhost:5000/eventos", evento);
   //envia o evento para o microsserviço de consulta
-  axios.post("http://localhost:6000/eventos", evento);
-  //envia o evento para o microsserviço de Classificação
   axios.post("http://localhost:7000/eventos", evento);
+  //envia o evento para o microsserviço de Classificação
+  axios.post("http://localhost:8000/eventos", evento);
   res.status(200).send({ msg: "ok " });
 });
 
