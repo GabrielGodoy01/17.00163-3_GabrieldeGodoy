@@ -10,7 +10,7 @@ const funcoes = {
       ? "importante"
       : "comum";
     console.log(observacao.status);
-    axios.post("http://localhost:10000/eventos", {
+    axios.post("http://192.168.0.110:10000/eventos", {
       tipo: "ObservacaoClassificada",
       dados: observacao,
     });
