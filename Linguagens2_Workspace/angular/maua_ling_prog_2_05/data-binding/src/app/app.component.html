@@ -1,0 +1,23 @@
+<div class="container mt-3 p-3 border">
+  <form>
+    <div class="form-group">
+      <label for="nomeInput">Nome</label>
+      <input
+        (input)="alterarNome($event)"
+        type="text"
+        class="form-control"
+        id="nomeInput"
+        placeholder="Digite seu nome"
+      />
+    </div>
+    <button (click)="adicionar()" type="button" class="btn btn-primary">
+      Adicionar
+    </button>
+    <div class="alert alert-primary mt-3 p-3">
+      {{ nome }}
+    </div>
+  </form>
+</div>
+
+<!-- 2 + 2 = {{ 2 + 2 - 5 }} Me chamo {{ nome }} tenho {{ idade }} anos minha sorte:
+{{ lancarDado() }} -->
