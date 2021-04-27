@@ -15,7 +15,7 @@ public class Transacoes {
         if(conta.getId() == conta2.getId() || conta.getSaldo() < valor)
             System.out.println("Id's iguais ou saldo insuficiente, impossivel transferir!");
         else
-            return (conta.getSaldo() -= valor && conta2.getSaldo() += valor);
+            return ((conta.getSaldo() -= valor) && conta2.getSaldo() = valor);
     }
 
 
