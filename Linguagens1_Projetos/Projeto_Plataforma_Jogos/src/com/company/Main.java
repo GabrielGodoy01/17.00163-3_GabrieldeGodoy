@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String nome, genero, descricao;
-        System.out.println("Informe nome, genero, descricao: ");
+        System.out.println("Informe nome, genero, descricao do jogo: ");
         nome= scanner.nextLine();
         genero = scanner.nextLine();
         descricao = scanner.nextLine();
