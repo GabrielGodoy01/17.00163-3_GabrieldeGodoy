@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Cliente } from '../cliente.model';
+import { ClienteService } from '../cliente.service';
 
 @Component({
   selector: 'app-cliente-inserir',
@@ -7,17 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClienteInserirComponent implements OnInit {
 
-  //Pegar os dados que o usuário vai digitar nos 3 inputs do html, 2-way-databinding
-  nome!: string;
-  fone!: string;
-  email!: string;
-
-  constructor() { }
+  constructor(private clienteService: ClienteService) { }
 
   ngOnInit(): void {
   }
 
-  onAdicionarCliente(){
-    console.log("Adicionando cliente...");
+  onAdicionarCliente(form: NgForm){
+    if(form.invalid) return;
+    this.clienteService.adicionarCliente(
+      form.value.nome,
+      form.value.fone,
+      form.value.email
+    );
+    form.resetForm();
   }
+
 }

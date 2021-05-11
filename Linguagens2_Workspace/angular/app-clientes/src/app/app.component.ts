@@ -1,3 +1,5 @@
+
+import { Cliente } from './clientes/cliente.model';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app-clientes';
+  clientes: Cliente[] = [];
+  onClienteAdicionado(cliente: never){
+    this.clientes = [cliente, ...this.clientes];
+    // console.log(cliente);
+  }
 }
