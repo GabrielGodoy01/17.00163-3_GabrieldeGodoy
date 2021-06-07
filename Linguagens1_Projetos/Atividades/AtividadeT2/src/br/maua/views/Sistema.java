@@ -69,7 +69,7 @@ public class Sistema{
     }
 
     public static void Menu(){
-        System.out.println("1 - CADASTRAR UM NOVO MEMBRO");
+        System.out.println("\n1 - CADASTRAR UM NOVO MEMBRO");
         System.out.println("2 - APRESENTAÇÃO DOS MEMBROS CADASTRADOS");
         System.out.println("3 - DEIXAR UM COLABORADOR IR");
         System.out.println("4 - TROCAR A JORNADA DE TRABALHO");
@@ -79,7 +79,7 @@ public class Sistema{
 
     public static Funcionarios MenuCadastro(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nome: ");
+        System.out.println("\nNome: ");
         String nome = scanner.next();
         System.out.println("E-mail: ");
         String email = scanner.next();
