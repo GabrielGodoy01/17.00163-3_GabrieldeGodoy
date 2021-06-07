@@ -1,5 +1,5 @@
 package br.maua.interfaces;
 
-public interface Apresentar {
+public interface IApresentar {
     public void apresentarUsuario();
 }

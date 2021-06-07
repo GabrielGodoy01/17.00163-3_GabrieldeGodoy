@@ -7,6 +7,6 @@ import br.maua.enumeracoes.HorarioSistema;
  * @author Gabriel de Godoy Braz e Matheus Vivas - 17.00163-3/17.04401-4
  */
 
-public interface PostarMensagem {
+public interface IPostarMensagem {
     public void mensagem(HorarioSistema horarioSistema);
 }

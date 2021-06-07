@@ -28,7 +28,7 @@ public class MobileMembers extends Funcionarios {
     public void apresentarUsuario() {
         System.out.println("\nNome de Usuario: " + this.getUsuario() +
         "\nE-mail: " + this.getEmail() +
-        "\nCargo: " + this.getTiposMembros());
+        "\nCargo: " + this.getTiposMembros()+ "\n");
         
     }
 }

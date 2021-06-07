@@ -2,15 +2,15 @@ package br.maua.models;
 
 import br.maua.enumeracoes.HorarioSistema;
 import br.maua.enumeracoes.TiposMembros;
-import br.maua.interfaces.Apresentar;
-import br.maua.interfaces.PostarMensagem;
+import br.maua.interfaces.IApresentar;
+import br.maua.interfaces.IPostarMensagem;
 
 /**
  * Classe concreta para implementar um array de usuários do sistema que implementa PostarMensagem para os usuarios se comunicarem.
  * @author Gabriel de Godoy Braz e Matheus Vivas - 17.00163-3/17.04401-4
  */
 
-public abstract class Funcionarios implements PostarMensagem, Apresentar{
+public abstract class Funcionarios implements IPostarMensagem, IApresentar{
     private String usuario;
     private String email;
     private TiposMembros tiposMembros;

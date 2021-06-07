@@ -12,6 +12,7 @@ public class Repository implements IRepository{
     @Override
     public void removerFuncionario(Funcionarios funcionarios) {
         this.funcionarios.remove(funcionarios);
+        System.out.println(funcionarios.getUsuario() + " removido do cadastro de funcionários!");
         
     }
 
@@ -26,7 +27,6 @@ public class Repository implements IRepository{
         for(Funcionarios funcionario : funcionarios){
             funcionario.apresentarUsuario();
         }
-        
     }
 
     @Override
@@ -56,10 +56,8 @@ public class Repository implements IRepository{
     }
 
     @Override
-    public void postarMensagens() {
-        for(Funcionarios funcionario : funcionarios) {
-            funcionario.mensagem(funcionario.getHorarioSistema());
-        }
+    public ArrayList<Funcionarios> getFuncionarios(){
+        return funcionarios;
     }
     
 }

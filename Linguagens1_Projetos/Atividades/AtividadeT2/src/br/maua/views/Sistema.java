@@ -9,6 +9,7 @@ import br.maua.models.ScriptGuys;
 import br.maua.repositories.IRepository;
 import br.maua.repositories.Repository;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -27,7 +28,9 @@ public class Sistema{
         Scanner scanner = new Scanner(System.in);
 
         do{
+            
             Menu();
+
 
             principal = scanner.nextInt();
 
@@ -38,7 +41,7 @@ public class Sistema{
                 case 1:
                     Funcionarios f = MenuCadastro();
                     if (f != null){
-                        repository.adicionarFuncionario(f);;
+                        repository.adicionarFuncionario(f);
                     }                    
                     break;
                     
@@ -62,7 +65,10 @@ public class Sistema{
                     break;
 
                 case 5:
-                    repository.postarMensagens();
+                ArrayList<Funcionarios> funcionarios2 = repository.getFuncionarios();
+                    for(Funcionarios funcionario : funcionarios2) {
+                        funcionario.mensagem(funcionario.getHorarioSistema());
+                    }
                     break;
             }
         } while(principal != 0);
@@ -88,7 +94,7 @@ public class Sistema{
         System.out.println("2 - HEAVY LIFTERS");
         System.out.println("3 - SCRIPT GUYS");
         System.out.println("4 - BIG BROTHERS");
-        System.out.println("0 - Sair");
+        System.out.println("0 - Cancelar");
         int cargo = scanner.nextInt();
         switch(cargo){
             case 1:
@@ -105,4 +111,5 @@ public class Sistema{
                 return null;
         }
     }
+
 }
