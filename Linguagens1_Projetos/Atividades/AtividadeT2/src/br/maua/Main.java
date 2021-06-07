@@ -1,6 +1,6 @@
 package br.maua;
 
-import br.maua.models.Sistema;
+import br.maua.views.Sistema;
 
 public class Main {
 
