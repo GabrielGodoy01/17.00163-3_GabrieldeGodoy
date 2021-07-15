@@ -91,7 +91,6 @@ public class Sistema{
         String email = scanner.next();
         System.out.println("Cargo: ");
         System.out.println("1 - MOBILE MEMBERS");
-        System.out.println("2 - HEAVY LIFTERS");
         System.out.println("3 - SCRIPT GUYS");
         System.out.println("4 - BIG BROTHERS");
         System.out.println("0 - Cancelar");
